@@ -5,6 +5,7 @@ import { db } from '@/db';
 import { documentsTable } from '@/db/schema';
 import { eq } from "drizzle-orm";
 import { createDocument } from "@/app/actions";
+import Chat from "@/components/Chat";
 
 export default async function Home() {
 
@@ -33,6 +34,7 @@ export default async function Home() {
           <button type="submit">Submit</button>
         </form>
       </div>
+      <Chat />
     </div>
   );
 }

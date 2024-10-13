@@ -1,0 +1,7 @@
+{
+    "name": "chat-app",
+    "main": "party/index.ts",
+    "parties": {
+      "chat": "party/index.ts"
+    }
+  }
