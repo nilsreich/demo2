@@ -42,3 +42,13 @@ export const users = sqliteTable("user", {
       .references(() => users.id, { onDelete: "cascade" }),
     expires: integer("expires", { mode: "timestamp_ms" }).notNull(),
   })
+
+  export const documentsTable = sqliteTable("documentsTable", {
+    id: text("id")
+      .primaryKey()
+      .$defaultFn(() => crypto.randomUUID()),
+    content: text("content"),
+    userId: text("userId")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+  })
